@@ -3,7 +3,7 @@ import Hero from "@/components/Hero";
 import Activities from "@/components/Activities";
 import About from "@/components/AboutSection";
 import Contact from "@/components/ContactSection";
-import { useInView } from "react-intersection-observer";
+import ScrollToTop from "@/components/ScrollToTop";
 
 const Index = () => {
   return (
@@ -13,6 +13,7 @@ const Index = () => {
       <About />
       <Activities />
       <Contact />
+      <ScrollToTop />
     </div>
   );
 };
