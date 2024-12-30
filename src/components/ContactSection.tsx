@@ -1,10 +1,25 @@
 import { useInView } from "react-intersection-observer";
+import CustomMap from "./CustomMap";
+import { APIProvider } from "@vis.gl/react-google-maps";
 
 const ContactSection = () => {
   const { ref, inView } = useInView({
     threshold: 0.2,
     triggerOnce: true,
   });
+  
+  const apiKey = import.meta.env.VITE_GMAP_API_KEY;
+  
+  const placeName = "Çetineller Zirai Ürünler A.Ş";
+  const lat = 38.186755;
+  const lng = 27.3526956;
+  const placeId = "ChIJPbHAmWdduRQRgQTgxCFcHVw"; // Replace with the actual Place ID
+
+  const embedUrl = `https://www.google.com/maps/embed/v1/place?key=${apiKey}&q=place_id:${placeId}&center=${lat},${lng}&zoom=15`;
+
+  
+
+  console.log(embedUrl)
 
   return (
     <section ref={ref} className="py-24 px-6 bg-primary-bg/10" id="contact">
@@ -19,24 +34,33 @@ const ContactSection = () => {
               <div className="space-y-4">
                 <p className="flex items-center gap-2">
                   <span className="text-primary-DEFAULT">📍</span>
-                  Torbalı, İzmir
+                  Çetineller Zeytinyağı Fabrikası, Çapak Mah. Philsa Cad. No7/3
                 </p>
                 <p className="flex items-center gap-2">
                   <span className="text-primary-DEFAULT">📞</span>
-                  +90 (XXX) XXX XX XX
+                  <a href="tel:+902328531550" className="text-primary-DEFAULT">+90 (232) 853 15 50</a>
                 </p>
                 <p className="flex items-center gap-2">
                   <span className="text-primary-DEFAULT">✉️</span>
-                  info@example.com
+                  cetineller@hotmail.com
                 </p>
               </div>
             </div>
           </div>
           <div className="relative h-[400px] rounded-lg overflow-hidden shadow-lg">
-            {/* Replace with actual Google Maps integration */}
-            <div className="absolute inset-0 bg-gray-200 flex items-center justify-center">
-              <p className="text-gray-600">Google Maps will be integrated here</p>
-            </div>
+            {/* <APIProvider apiKey={apiKey}>
+              <CustomMap />
+            </APIProvider> */}
+            <iframe
+              width="600"
+              height="400"
+              
+              loading="lazy"
+              allowfullscreen
+              referrerpolicy="no-referrer-when-downgrade"
+              src={embedUrl}
+              >
+            </iframe>
           </div>
         </div>
       </div>

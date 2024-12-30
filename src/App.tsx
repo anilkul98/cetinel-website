@@ -23,14 +23,14 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
-          <Route path="/about" element={<About />} />
+          {/* <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/activities/cotton" element={<Cotton />} />
           <Route path="/activities/fuel" element={<Fuel />} />
           <Route path="/activities/corn" element={<Corn />} />
           <Route path="/activities/seeds" element={<Seeds />} />
           <Route path="/activities/cattle" element={<Cattle />} />
-          <Route path="/activities/olive-oil" element={<OliveOil />} />
+          <Route path="/activities/olive-oil" element={<OliveOil />} /> */}
         </Routes>
       </BrowserRouter>
     </TooltipProvider>
