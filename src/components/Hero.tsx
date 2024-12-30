@@ -6,7 +6,7 @@ const Hero = () => {
         style={{
           backgroundImage: "url('/placeholder.svg')",
           backgroundColor: "rgba(0, 36, 0, 0.7)",
-          backgroundBlend: "overlay",
+          backgroundBlendMode: "overlay",
         }}
       />
       <div className="relative container mx-auto px-6 py-24">
