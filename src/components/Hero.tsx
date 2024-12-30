@@ -1,11 +1,13 @@
+import React from 'react';
+
 const Hero = () => {
   return (
     <div className="relative bg-primary-DEFAULT text-white min-h-screen flex items-center">
       <div
         className="absolute inset-0 bg-cover bg-center"
         style={{
-          backgroundImage: "url('/placeholder.svg')",
-          backgroundColor: "rgba(0, 36, 0, 0.7)",
+          backgroundImage: "url('src/assets/building/1.jpeg')",
+          backgroundColor: "rgba(39, 59, 9, 0.7)",
           backgroundBlendMode: "overlay",
         }}
       />
@@ -18,12 +20,6 @@ const Hero = () => {
             Torbalı'dan tüm Türkiye'ye uzanan tarım ve hayvancılık serüvenimizde,
             kalite ve güven bizim önceliğimizdir.
           </p>
-          <a
-            href="/about"
-            className="inline-block bg-primary-light hover:bg-primary-medium text-white font-inter font-semibold px-8 py-4 rounded-lg transition-colors duration-200"
-          >
-            Hikayemizi Keşfedin
-          </a>
         </div>
       </div>
     </div>
