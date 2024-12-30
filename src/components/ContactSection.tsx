@@ -54,10 +54,7 @@ const ContactSection = () => {
             <iframe
               width="600"
               height="400"
-              
               loading="lazy"
-              allowfullscreen
-              referrerpolicy="no-referrer-when-downgrade"
               src={embedUrl}
               >
             </iframe>
