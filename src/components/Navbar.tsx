@@ -1,27 +1,34 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+      setIsOpen(false);
+    }
+  };
+
   const menuItems = [
-    { title: "Ana Sayfa", href: "/" },
-    { title: "Hakkımızda", href: "/about" },
+    { title: "Ana Sayfa", sectionId: "hero" },
+    { title: "Hakkımızda", sectionId: "about" },
     {
       title: "Faaliyet Alanlarımız",
-      href: "#",
+      sectionId: "activities",
       submenu: [
-        { title: "Pamuk Çırçır", href: "/activities/cotton" },
-        { title: "Akaryakıt İstasyonu", href: "/activities/fuel" },
-        { title: "Mısır Ticareti", href: "/activities/corn" },
-        { title: "Tohum ve Gübre", href: "/activities/seeds" },
-        { title: "Büyükbaş Hayvancılık", href: "/activities/cattle" },
-        { title: "Zeytinyağı Üretimi", href: "/activities/olive-oil" },
+        { title: "Pamuk Çırçır", sectionId: "activities" },
+        { title: "Akaryakıt İstasyonu", sectionId: "activities" },
+        { title: "Mısır Ticareti", sectionId: "activities" },
+        { title: "Tohum ve Gübre", sectionId: "activities" },
+        { title: "Büyükbaş Hayvancılık", sectionId: "activities" },
+        { title: "Zeytinyağı Üretimi", sectionId: "activities" },
       ],
     },
-    { title: "İletişim", href: "/contact" },
+    { title: "İletişim", sectionId: "contact" },
   ];
 
   return (
@@ -29,11 +36,11 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-20">
           <div className="flex items-center">
-            <Link to="/" className="flex-shrink-0">
+            <button onClick={() => scrollToSection('hero')} className="flex-shrink-0">
               <h1 className="text-2xl font-playfair font-bold text-primary-DEFAULT">
                 LOGO
               </h1>
-            </Link>
+            </button>
           </div>
 
           {/* Desktop Menu */}
@@ -42,28 +49,31 @@ const Navbar = () => {
               {menuItems.map((item) => (
                 <div key={item.title} className="relative group">
                   {item.submenu ? (
-                    <button className="text-gray-700 hover:text-primary-DEFAULT px-3 py-2 rounded-md text-sm font-medium font-inter">
-                      {item.title}
-                    </button>
-                  ) : (
-                    <Link
-                      to={item.href}
+                    <button 
+                      onClick={() => scrollToSection(item.sectionId)}
                       className="text-gray-700 hover:text-primary-DEFAULT px-3 py-2 rounded-md text-sm font-medium font-inter"
                     >
                       {item.title}
-                    </Link>
+                    </button>
+                  ) : (
+                    <button
+                      onClick={() => scrollToSection(item.sectionId)}
+                      className="text-gray-700 hover:text-primary-DEFAULT px-3 py-2 rounded-md text-sm font-medium font-inter"
+                    >
+                      {item.title}
+                    </button>
                   )}
                   {item.submenu && (
                     <div className="absolute left-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
                       <div className="py-1">
                         {item.submenu.map((subitem) => (
-                          <Link
+                          <button
                             key={subitem.title}
-                            to={subitem.href}
-                            className="block px-4 py-2 text-sm text-gray-700 hover:bg-primary-bg hover:text-primary-DEFAULT font-inter"
+                            onClick={() => scrollToSection(subitem.sectionId)}
+                            className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-primary-bg hover:text-primary-DEFAULT font-inter"
                           >
                             {subitem.title}
-                          </Link>
+                          </button>
                         ))}
                       </div>
                     </div>
@@ -94,27 +104,30 @@ const Navbar = () => {
             {menuItems.map((item) => (
               <div key={item.title}>
                 {item.submenu ? (
-                  <button className="text-gray-700 hover:text-primary-DEFAULT block px-3 py-2 rounded-md text-base font-medium font-inter w-full text-left">
+                  <button
+                    onClick={() => scrollToSection(item.sectionId)}
+                    className="text-gray-700 hover:text-primary-DEFAULT block px-3 py-2 rounded-md text-base font-medium font-inter w-full text-left"
+                  >
                     {item.title}
                   </button>
                 ) : (
-                  <Link
-                    to={item.href}
-                    className="text-gray-700 hover:text-primary-DEFAULT block px-3 py-2 rounded-md text-base font-medium font-inter"
+                  <button
+                    onClick={() => scrollToSection(item.sectionId)}
+                    className="text-gray-700 hover:text-primary-DEFAULT block px-3 py-2 rounded-md text-base font-medium font-inter w-full text-left"
                   >
                     {item.title}
-                  </Link>
+                  </button>
                 )}
                 {item.submenu && (
                   <div className="pl-4">
                     {item.submenu.map((subitem) => (
-                      <Link
+                      <button
                         key={subitem.title}
-                        to={subitem.href}
-                        className="text-gray-600 hover:text-primary-DEFAULT block px-3 py-2 rounded-md text-sm font-inter"
+                        onClick={() => scrollToSection(subitem.sectionId)}
+                        className="text-gray-600 hover:text-primary-DEFAULT block px-3 py-2 rounded-md text-sm font-inter w-full text-left"
                       >
                         {subitem.title}
-                      </Link>
+                      </button>
                     ))}
                   </div>
                 )}
