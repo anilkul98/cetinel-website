@@ -21,12 +21,12 @@ const About = () => {
               40 yılı aşkın tecrübemizle, modern tarım teknolojilerini geleneksel değerlerle birleştirerek müşterilerimize en kaliteli hizmeti sunmaktayız.
             </p>
           </div>
-          <div className="relative h-[400px] rounded-lg overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-300">
+          <div className="relative h-[450px] rounded-lg overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-300">
             <div 
               className="absolute inset-0 bg-cover bg-center"
               style={{
-                backgroundImage: "url('/placeholder.svg')",
-                backgroundColor: "rgba(0, 36, 0, 0.1)",
+                backgroundImage: "url('src/assets/building/2.png')",
+                backgroundColor: "rgba(0, 0, 0, 0.1)",
                 backgroundBlendMode: "multiply",
               }}
             />
