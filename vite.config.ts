@@ -24,5 +24,5 @@
 import { defineConfig } from 'vite';
 
 export default defineConfig({
-  base: '/your-repository-name/', // Replace with the actual name of your repository
+  base: '/tarim-hkayeleri/', // Replace with the actual name of your repository
 });
