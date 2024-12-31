@@ -17,10 +17,6 @@ const ContactSection = () => {
 
   const embedUrl = `https://www.google.com/maps/embed/v1/place?key=${apiKey}&q=place_id:${placeId}&center=${lat},${lng}&zoom=15`;
 
-  
-
-  console.log(embedUrl)
-
   return (
     <section ref={ref} className="py-24 px-6 bg-primary-bg/10" id="contact">
       <div className={`max-w-6xl mx-auto ${inView ? 'animate-fade-in' : 'opacity-0'}`}>
