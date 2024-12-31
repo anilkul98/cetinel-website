@@ -4,37 +4,37 @@ const activities = [
   {
     title: "Pamuk Çırçır",
     description: "Modern teknoloji ile pamuk işleme",
-    image: "/public/assets/activities/pamuk.jpg",
+    image: "/assets/activities/pamuk.jpg",
     link: "/activities/cotton"
   },
   {
     title: "Zeytinyağı Üretimi",
     description: "Geleneksel lezzet, modern üretim",
-    image: "/public/assets/activities/zeytin.png",
-    link: "/public/assets/activities/zeytin.png"
+    image: "/assets/activities/zeytin.png",
+    link: "/assets/activities/zeytin.png"
   },
   {
     title: "Tohum ve Gübre",
     description: "Çiftçilerimize tam destek",
-    image: "/public/assets/activities/tohum.png",
+    image: "/assets/activities/tohum.png",
     link: "/activities/seeds"
   },
   {
     title: "Büyükbaş Hayvancılık",
     description: "Modern tesislerde kaliteli üretim",
-    image: "/public/assets/activities/hayvancilik.jpg",
+    image: "/assets/activities/hayvancilik.jpg",
     link: "/activities/cattle"
   },
   {
     title: "Mısır Ticareti",
     description: "Kaliteli ürün, güvenilir ticaret",
-    image: "/public/assets/activities/misir.png",
+    image: "/assets/activities/misir.png",
     link: "/activities/corn"
   },
   {
     title: "Akaryakıt İstasyonu",
     description: "Total ile güvenilir hizmet",
-    image: "/public/assets/activities/benzin.jpeg",
+    image: "/assets/activities/benzin.jpeg",
     link: "/activities/fuel"
   }
 ];
