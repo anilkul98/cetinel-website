@@ -25,7 +25,7 @@ const About = () => {
             <div 
               className="absolute inset-0 bg-cover bg-center"
               style={{
-                backgroundImage: "url('src/assets/building/2.png')",
+                backgroundImage: "url('public/assets/building/2.png')",
                 backgroundColor: "rgba(0, 0, 0, 0.1)",
                 backgroundBlendMode: "multiply",
               }}

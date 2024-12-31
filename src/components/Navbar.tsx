@@ -55,7 +55,7 @@ const Navbar = () => {
   
         {/* Centered Logo */}
         <div className="absolute left-1/2 transform -translate-x-1/2 flex items-center">
-          <img src="src/assets/logo/apple-touch-icon-180x180.png" alt="Logo" className="h-20 w-auto" />
+          <img src="public/assets/logo/apple-touch-icon-180x180.png" alt="Logo" className="h-20 w-auto" />
         </div>
   
         {/* Desktop Menu */}
