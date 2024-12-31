@@ -25,8 +25,14 @@ jobs:
           VITE_API_KEY: ${{ secrets.VITE_GMAP_API_KEY }}
         run: npm run build
 
+      # Set up Git
+      - name: Set up Git
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.MY_PERSONAL_ACCESS_TOKEN }}
+          github_token: ${{ secrets.cetineller_web }}
           publish_dir: ./dist
