@@ -24,5 +24,10 @@
 import { defineConfig } from 'vite';
 
 export default defineConfig({
-  base: '/tarim-hkayeleri/', // Replace with the actual name of your repository
+  base: '/tarim-hkayeleri/',
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, 'src'),  // This resolves '@' to 'src' directory
+    },
+  },
 });
