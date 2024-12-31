@@ -22,11 +22,8 @@ jobs:
 
       - name: Build the app
         env:
-          VITE_API_KEY: ${{ secrets.VITE_GMAP_API_KEY }}
+          VITE_GMAP_API_KEY: ${{ secrets.VITE_GMAP_API_KEY }}
         run: npm run build
-        
-      - name: Check Env Variable
-        run: echo ${{ secrets.VITE_GMAP_API_KEY }}
 
       # Set up Git
       - name: Set up Git
