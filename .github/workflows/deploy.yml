@@ -34,5 +34,5 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.cetineller_web }}
+          github_token: ${{ secrets.CETINELLER_WEB }}
           publish_dir: ./dist
